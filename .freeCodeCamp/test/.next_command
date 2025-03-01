@@ -31,3 +31,10 @@ trap '__vsc_preexec_all "$_"' DEBUG
 __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 psql --username=freecodecamp --dbname=postgres
 psql --username=freecodecamp --dbname=postgres
+ls --color=auto
+cd ..
+__vsc_prompt_cmd_original
+ls --color=auto
+cd project
+pg_dump -cC --inserts -u freecodecamp universe > universe.sql
+pg_dump -cC --inserts -U freecodecamp universe > universe.sql
